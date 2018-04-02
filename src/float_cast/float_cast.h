@@ -40,7 +40,7 @@
 
 #if (defined (WIN32) || defined (_WIN32))
 
-	#include	<math.h>
+	#include	<cmath>
 
 	/*	Win32 doesn't seem to have these functions. 
 	**	Therefore implement inline versions of these functions here.
@@ -48,26 +48,14 @@
 	
 	__inline long int 
 	lrint (double flt) 
-	{	int intgr;
-
-		_asm
-		{	fld flt
-			fistp intgr
-			} ;
-			
-		return intgr ;
+	{	
+		return std::lrint(flt);
 	} 
 	
 	__inline long int 
 	lrintf (float flt)
-	{	int intgr;
-
-		_asm
-		{	fld flt
-			fistp intgr
-			} ;
-			
-		return intgr ;
+	{	
+		return std::lrintf(flt);
 	}
 
 #endif

@@ -26,6 +26,7 @@
 
 #include "StretcherImpl.h"
 
+#include <algorithm>
 #include <set>
 
 //#define EXPERIMENT 1

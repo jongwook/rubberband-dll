@@ -91,49 +91,49 @@ typedef int RubberBandOptions;
 struct RubberBandState_;
 typedef struct RubberBandState_ *RubberBandState;
 
-extern RubberBandState rubberband_new(unsigned int sampleRate,
+__declspec(dllexport) RubberBandState rubberband_new(unsigned int sampleRate,
                                       unsigned int channels,
                                       RubberBandOptions options,
                                       double initialTimeRatio,
                                       double initialPitchScale);
 
-extern void rubberband_delete(RubberBandState);
+__declspec(dllexport) void rubberband_delete(RubberBandState);
 
-extern void rubberband_reset(RubberBandState);
+__declspec(dllexport) void rubberband_reset(RubberBandState);
 
-extern void rubberband_set_time_ratio(RubberBandState, double ratio);
-extern void rubberband_set_pitch_scale(RubberBandState, double scale);
+__declspec(dllexport) void rubberband_set_time_ratio(RubberBandState, double ratio);
+__declspec(dllexport) void rubberband_set_pitch_scale(RubberBandState, double scale);
 
-extern double rubberband_get_time_ratio(const RubberBandState);
-extern double rubberband_get_pitch_scale(const RubberBandState);
+__declspec(dllexport) double rubberband_get_time_ratio(const RubberBandState);
+__declspec(dllexport) double rubberband_get_pitch_scale(const RubberBandState);
 
-extern unsigned int rubberband_get_latency(const RubberBandState);
+__declspec(dllexport) unsigned int rubberband_get_latency(const RubberBandState);
 
-extern void rubberband_set_transients_option(RubberBandState, RubberBandOptions options);
-extern void rubberband_set_detector_option(RubberBandState, RubberBandOptions options);
-extern void rubberband_set_phase_option(RubberBandState, RubberBandOptions options);
-extern void rubberband_set_formant_option(RubberBandState, RubberBandOptions options);
-extern void rubberband_set_pitch_option(RubberBandState, RubberBandOptions options);
+__declspec(dllexport) void rubberband_set_transients_option(RubberBandState, RubberBandOptions options);
+__declspec(dllexport) void rubberband_set_detector_option(RubberBandState, RubberBandOptions options);
+__declspec(dllexport) void rubberband_set_phase_option(RubberBandState, RubberBandOptions options);
+__declspec(dllexport) void rubberband_set_formant_option(RubberBandState, RubberBandOptions options);
+__declspec(dllexport) void rubberband_set_pitch_option(RubberBandState, RubberBandOptions options);
 
-extern void rubberband_set_expected_input_duration(RubberBandState, unsigned int samples);
+__declspec(dllexport) void rubberband_set_expected_input_duration(RubberBandState, unsigned int samples);
 
-extern unsigned int rubberband_get_samples_required(const RubberBandState);
+__declspec(dllexport) unsigned int rubberband_get_samples_required(const RubberBandState);
 
-extern void rubberband_set_max_process_size(RubberBandState, unsigned int samples);
-extern void rubberband_set_key_frame_map(RubberBandState, unsigned int keyframecount, unsigned int *from, unsigned int *to);
+__declspec(dllexport) void rubberband_set_max_process_size(RubberBandState, unsigned int samples);
+__declspec(dllexport) void rubberband_set_key_frame_map(RubberBandState, unsigned int keyframecount, unsigned int *from, unsigned int *to);
 
-extern void rubberband_study(RubberBandState, const float *const *input, unsigned int samples, int final);
-extern void rubberband_process(RubberBandState, const float *const *input, unsigned int samples, int final);
+__declspec(dllexport) void rubberband_study(RubberBandState, const float *const *input, unsigned int samples, int final);
+__declspec(dllexport) void rubberband_process(RubberBandState, const float *const *input, unsigned int samples, int final);
 
-extern int rubberband_available(const RubberBandState);
-extern unsigned int rubberband_retrieve(const RubberBandState, float *const *output, unsigned int samples);
+__declspec(dllexport) int rubberband_available(const RubberBandState);
+__declspec(dllexport) unsigned int rubberband_retrieve(const RubberBandState, float *const *output, unsigned int samples);
 
-extern unsigned int rubberband_get_channel_count(const RubberBandState);
+__declspec(dllexport) unsigned int rubberband_get_channel_count(const RubberBandState);
 
-extern void rubberband_calculate_stretch(RubberBandState);
+__declspec(dllexport) void rubberband_calculate_stretch(RubberBandState);
 
-extern void rubberband_set_debug_level(RubberBandState, int level);
-extern void rubberband_set_default_debug_level(int level);
+__declspec(dllexport) void rubberband_set_debug_level(RubberBandState, int level);
+__declspec(dllexport) void rubberband_set_default_debug_level(int level);
 
 #ifdef __cplusplus
 }
